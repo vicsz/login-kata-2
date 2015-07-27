@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <div class="page-header">
+                    <h1>User Creation</h1>
+                </div>
+
+                <form action="#" th:action="@{/}" th:object="${user}" method="post">
+                    <div id="name-group" class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" th:field="*{name}" ></input>
+                        <span class="help-block" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                        <span class="help-block" th:if="${nameErrorMessage}" th:text="${nameErrorMessage}"></span>
+                    </div>
+
+                    <div id="password-group" class="form-group">
+                        <label>Password</label>
+                        <input type="text" name="password" class="form-control" th:field="*{password}"></input>
+                        <span class="help-block" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg btn-block">
+                        <span class="glyphicon glyphicon glyphicon-check"></span> Submit
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>
+

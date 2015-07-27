@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Successful Creation</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div class="page-header">
+					<h1>User Created</h1>
+				</div>
+				<div>
+					You have successfully logged in as user
+					<span th:text="${param.message[0]}"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
